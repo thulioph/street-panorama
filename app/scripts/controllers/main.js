@@ -14,7 +14,7 @@ angular.module('streetViewApp')
 
     // ====
     // helpers functions
-    function getLocation() {
+    function _getLocation() {
       if (navigator.geolocation) {
         console.log('Get userlocation...');
         navigator.geolocation.getCurrentPosition(success, error);
@@ -96,6 +96,20 @@ angular.module('streetViewApp')
           };
         }
       }
+
+    function _showInitialImage() {
+      $scope.range.size = {};
+      $scope.range.size.value = '400';
+
+      $scope.range.fov = {};
+      $scope.range.fov.value = '90';
+
+      $scope.range.heading = {};
+      $scope.range.heading.value = '235';
+
+      $scope.range.pintch = {};
+      $scope.range.pintch.value = '10';
+    }
     // ====
 
     // ====
@@ -124,8 +138,10 @@ angular.module('streetViewApp')
 
       Gmaps.geocode(params, function(result) {
         var coords = result.results[0].geometry.location;
-        _initStreetView(coords);
         $scope.coords = coords;
+
+        _initStreetView(coords);
+        _showInitialImage();
       })
     }
     // ====
@@ -133,7 +149,7 @@ angular.module('streetViewApp')
     // ====
     // g_streetview_service
     $scope.pickMyLocation = function() {
-      getLocation()
+      _getLocation();
     }
 
     $scope.$on('pick_my_location', function() {
@@ -170,11 +186,13 @@ angular.module('streetViewApp')
     // ====
     // g_streetview_image
     $scope.ImHere = function() {
-      getLocation();
+      _getLocation();
     };
 
     $scope.$on('im_here', function() {
       $scope.coords = $scope.location;
+      _showInitialImage();
+      $scope.$apply();
     });
     // ====
 
