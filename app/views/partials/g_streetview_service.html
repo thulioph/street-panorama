@@ -1,0 +1,27 @@
+<div class="alert alert-info" role="alert">
+  Link para documentações <a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-simple">aqui</a> e <a href="https://developers.google.com/maps/documentation/geocoding/intro">aqui</a>.
+</div>
+
+<br>
+
+<form>
+  <fieldset class="form-group">
+    <label for="address">Endereço</label>
+    <input autocomplete="off" type="text" class="form-control" id="address" uib-typeahead="address for address in autoComplete($viewValue)" ng-model="$viewValue" typeahead-on-select="getAddress($item)">
+  </fieldset>
+
+  <button ng-click="pickMyLocation()" class="btn btn-primary">minha localização</button>
+</form>
+
+<br><br><br>
+
+<!-- map -->
+<div class="col-xs-12 col-sm-6 box">
+  <aside id="map"></aside>
+</div>
+
+<!-- panoramic -->
+<div class="col-xs-12 col-sm-6 box">
+  <aside id="panoramic"></aside>
+</div>
+
