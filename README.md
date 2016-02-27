@@ -1,12 +1,21 @@
-# street-view
+# Street Panorama
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+> Street view and panorama.
 
-## Build & development
+### Demo
 
-Run `grunt` for building and `grunt serve` for preview.
+[Link](https://thulioph.github.io/street-panorama)
 
-## Testing
+### APIs
 
-Running `grunt test` will run the unit tests with karma.
+- [Custom Street View panoramas](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple)
+- [Street View service](https://developers.google.com/maps/documentation/javascript/examples/streetview-simple)
+- [Geocoding API](https://developers.google.com/maps/documentation/geocoding)
+- [Google Street View Image API](https://developers.google.com/maps/documentation/streetview)
+
+### Helpers
+
+- [Yeoman](http://yeoman.io/)
+- [UI Bootstrap](https://angular-ui.github.io/bootstrap/)
+- [Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorGeolocation)
+- [Angularjs Slider](http://angular-slider.github.io/angularjs-slider/)
